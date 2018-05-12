@@ -4,12 +4,14 @@ import ListItem from './ListItem';
 type ListProps = {
   item: string;
   items: string[];
+  onDelete: any;
 };
 
 class List extends React.Component<ListProps> {
   render() {
+    const { onDelete } = this.props;
     const list = this.props.items.map((item, i) => (
-      <ListItem key={i} item={item} />
+      <ListItem key={i} item={item} onDelete={onDelete} />
     ));
     return <ul>{list}</ul>;
   }

@@ -27,14 +27,21 @@ class App extends React.Component<AppProps> {
       item: ''
     });
   };
+
+  onDelete = (e: any) => {
+    const toDelete = e.target.parentElement.innerText.replace('Delete', '');
+    const filteredItems = this.state.items.filter(item => item !== toDelete);
+    this.setState({ items: filteredItems });
+  };
+
   public render() {
     const { item, items } = this.state;
-    const { onChange, onSubmit } = this;
+    const { onChange, onSubmit, onDelete } = this;
     return (
       <div>
         <h1>TS Todo App</h1>
         <Input item={item} onChange={onChange} onSubmit={onSubmit} />
-        <List items={items} />
+        <List items={items} onDelete={onDelete} />
       </div>
     );
   }
