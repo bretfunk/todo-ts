@@ -1,10 +1,5 @@
 import * as React from 'react';
-
-type InputProps = {
-  item: string;
-  onChange: any;
-  onSubmit: any;
-};
+import { InputProps } from './types';
 
 class Input extends React.Component<InputProps> {
   render() {

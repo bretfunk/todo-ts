@@ -1,11 +1,6 @@
 import * as React from 'react';
+import { ListItemProps } from './types';
 
-type ListItemProps = {
-  key: any;
-  item: any;
-  onDelete: any;
-  deleteButton: any;
-};
 const ListItem = (props: ListItemProps) => {
   const { onDelete } = props;
   const deleteButton = <button onClick={onDelete}>Delete</button>;

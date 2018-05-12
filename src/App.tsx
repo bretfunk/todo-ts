@@ -1,12 +1,7 @@
 import * as React from 'react';
 import Input from './components/Input';
 import List from './components/List';
-
-type AppProps = {
-  item: string;
-  items: string[];
-  onChange: () => any;
-};
+import { AppProps } from './types';
 
 class App extends React.Component<AppProps> {
   constructor(props: any) {

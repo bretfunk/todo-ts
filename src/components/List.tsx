@@ -1,11 +1,6 @@
 import * as React from 'react';
 import ListItem from './ListItem';
-
-type ListProps = {
-  item: string;
-  items: string[];
-  onDelete: any;
-};
+import { ListProps } from './types';
 
 class List extends React.Component<ListProps> {
   render() {
