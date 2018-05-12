@@ -8,7 +8,9 @@ type ListProps = {
 
 class List extends React.Component<ListProps> {
   render() {
-    const list = this.props.items.map((item, i) => <li key={i}>{item}</li>);
+    const list = this.props.items.map((item, i) => (
+      <ListItem key={i} item={item} />
+    ));
     return <ul>{list}</ul>;
   }
 }
