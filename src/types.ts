@@ -1,7 +1,9 @@
 export type AppProps = {
   item: string;
   items: string[];
-  onChange: () => any;
+  addItem: any;
+  onChange: (e: any) => any;
+  onDelete: (e: any) => any;
 };
 
 export type InputProps = {
@@ -12,9 +14,8 @@ export type InputProps = {
 
 export type ListProps = {
   key: number;
-  item: string;
   items: string[];
-  onDelete: any;
+  onDelete: () => any;
 };
 
 export type ListItemProps = {
@@ -28,8 +29,7 @@ export type ListItemProps = {
 export type State = {
   item: string;
   items: string[];
-  state: {
-    item: string;
-    items: string[];
-  };
+  addItem: any;
+  onChange: any;
+  onDelete: any;
 };

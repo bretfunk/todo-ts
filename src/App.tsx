@@ -2,25 +2,36 @@ import * as React from "react";
 import Input from "./components/Input";
 import List from "./components/List";
 import { State, AppProps } from "./types";
+import { connect } from "react-redux";
+import { addItem } from "./store/actions/index";
 
-class App extends React.Component<AppProps, State> {
+const mapDispatchToProps = dispatch => {
+  return {
+    addItem: item => dispatch(addItem(item))
+  };
+};
+
+const mapStateToProps = state => {
+  return { item: state.item, items: state.items };
+};
+
+class ConnectedApp extends React.Component<AppProps, State> {
   constructor(props: any) {
     super(props);
-    this.state = {
-      item: "",
-      items: []
-    };
   }
+
   onChange = (e: any) => {
     const newItem = e.target.value;
     this.setState({ item: newItem });
   };
   onSubmit = () => {
-    const { item, items } = this.state;
-    this.setState({
-      items: [...items, item],
-      item: ""
-    });
+    const { item } = this.state;
+    this.props.addItem({ item });
+    //const { item, items } = this.state;
+    //this.setState({
+    //items: [...items, item],
+    //item: ""
+    //});
   };
 
   onDelete = (e: any): any => {
@@ -34,19 +45,13 @@ class App extends React.Component<AppProps, State> {
     const { onChange, onSubmit, onDelete } = this;
     return (
       <div>
-        <div className="jumbotron">
-          <div className="container">
-            <h1>Hello, world!</h1>
-          </div>
-        </div>
-        <div className="row">
-          <h1>TS Todo App</h1>
-          <Input item={item} onChange={onChange} onSubmit={onSubmit} />
-          <List items={items} onDelete={onDelete} />
-        </div>
+        <h1>TS Todo App</h1>
+        <Input item={item} onChange={onChange} onSubmit={onSubmit} />
+        <List items={items} onDelete={onDelete} />
       </div>
     );
   }
 }
 
+const App = connect(mapStateToProps, mapDispatchToProps)(ConnectedApp);
 export default App;
