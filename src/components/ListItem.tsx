@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { ListItemProps } from './types';
+import * as React from "react";
+import { ListItemProps } from "./../types";
 
 const ListItem = (props: ListItemProps) => {
   const { onDelete } = props;

@@ -6,9 +6,9 @@
     "accounting": "^0.4.1",
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.1.1",
     "debounce": "^1.1.0",
     "history": "^4.7.2",
-    "ts-todo": "git+ssh://git@github.com:bretfunk/ts-todo#master",
     "luxon": "^0.5.3",
     "ramda": "^0.25.0",
     "react": "^16.3.1",
@@ -20,7 +20,8 @@
     "redux-commander": "^0.0.6",
     "redux-devtools-extension": "^2.13.2",
     "reselect": "^3.0.1",
-    "revalidate": "^1.2.0"
+    "revalidate": "^1.2.0",
+    "ts-todo": "git+ssh://git@github.com:bretfunk/ts-todo#master"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.44",

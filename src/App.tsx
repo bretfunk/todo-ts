@@ -1,13 +1,13 @@
-import * as React from 'react';
-import Input from './components/Input';
-import List from './components/List';
-import { AppProps } from './types';
+import * as React from "react";
+import Input from "./components/Input";
+import List from "./components/List";
+import { State, AppProps } from "./types";
 
-class App extends React.Component<AppProps> {
+class App extends React.Component<AppProps, State> {
   constructor(props: any) {
     super(props);
     this.state = {
-      item: '',
+      item: "",
       items: []
     };
   }
@@ -19,12 +19,12 @@ class App extends React.Component<AppProps> {
     const { item, items } = this.state;
     this.setState({
       items: [...items, item],
-      item: ''
+      item: ""
     });
   };
 
-  onDelete = (e: any) => {
-    const toDelete = e.target.parentElement.innerText.replace('Delete', '');
+  onDelete = (e: any): any => {
+    const toDelete = e.target.parentElement.innerText.replace("Delete", "");
     const filteredItems = this.state.items.filter(item => item !== toDelete);
     this.setState({ items: filteredItems });
   };
@@ -34,9 +34,16 @@ class App extends React.Component<AppProps> {
     const { onChange, onSubmit, onDelete } = this;
     return (
       <div>
-        <h1>TS Todo App</h1>
-        <Input item={item} onChange={onChange} onSubmit={onSubmit} />
-        <List items={items} onDelete={onDelete} />
+        <div className="jumbotron">
+          <div className="container">
+            <h1>Hello, world!</h1>
+          </div>
+        </div>
+        <div className="row">
+          <h1>TS Todo App</h1>
+          <Input item={item} onChange={onChange} onSubmit={onSubmit} />
+          <List items={items} onDelete={onDelete} />
+        </div>
       </div>
     );
   }

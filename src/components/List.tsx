@@ -1,6 +1,6 @@
-import * as React from 'react';
-import ListItem from './ListItem';
-import { ListProps } from './types';
+import * as React from "react";
+import ListItem from "./ListItem";
+import { ListProps } from "./../types";
 
 class List extends React.Component<ListProps> {
   render() {

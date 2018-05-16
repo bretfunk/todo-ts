@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { InputProps } from './types';
+import * as React from "react";
+import { InputProps } from "./../types";
 
 class Input extends React.Component<InputProps> {
   render() {
